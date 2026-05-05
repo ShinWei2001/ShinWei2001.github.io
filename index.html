@@ -1,11 +1,185 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<meta charset="UTF-8"> 
-<title>My First Website</title> 
-</head> 
-<body> 
-<h1>Hello, this is my website!</h1> 
-<p>這是我用 GitHub Pages 架設的免費網站。</p> 
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart-E Robo | ETF智能理財</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #94a3b8;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .highlight {
+      color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Smart-E Robo</h1>
+  <p>Filtering First. Then Optimizing.</p>
+  <button class="btn">了解更多</button>
+</section>
+
+<!-- Problem -->
+<section>
+  <h2>🚨 市場問題</h2>
+  <p class="highlight">Garbage In, Garbage Out</p>
+  <p>現有 Robo-Advisor 直接將所有 ETF 投入模型，忽略費用、流動性與追蹤誤差。</p>
+</section>
+
+<!-- Pain -->
+<section>
+  <h2>📉 核心痛點</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>隱形成本</h3>
+      <p>費用率與買賣價差侵蝕報酬</p>
+    </div>
+    <div class="card">
+      <h3>流動性陷阱</h3>
+      <p>低成交量造成高滑價</p>
+    </div>
+    <div class="card">
+      <h3>追蹤誤差</h3>
+      <p>報酬偏離市場</p>
+    </div>
+  </div>
+</section>
+
+<!-- Solution -->
+<section>
+  <h2>💡 解決方案</h2>
+  <p>Smart-E Robo 採用「兩階段 ETF 篩選與優化」</p>
+</section>
+
+<!-- Product -->
+<section>
+  <h2>⚙️ 產品架構</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>第一階段</h3>
+      <p>ETF 評級篩選（ADV、Cost、Risk）</p>
+    </div>
+    <div class="card">
+      <h3>第二階段</h3>
+      <p>最佳化配置（MVO）</p>
+    </div>
+  </div>
+</section>
+
+<!-- Value -->
+<section>
+  <h2>✨ 核心價值</h2>
+  <ul>
+    <li>降低成本</li>
+    <li>提升穩定性</li>
+    <li>降低投資門檻</li>
+  </ul>
+</section>
+
+<!-- Result -->
+<section>
+  <h2>📊 回測結果</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Smart-E</h3>
+      <p>報酬：169.8%</p>
+      <p>最大回檔：-27.26%</p>
+    </div>
+    <div class="card">
+      <h3>Equal Weight</h3>
+      <p>報酬：102.6%</p>
+      <p>最大回檔：-25.85%</p>
+    </div>
+  </div>
+</section>
+
+<!-- Business -->
+<section>
+  <h2>💰 商業價值</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>投資人</h3>
+      <p>提升報酬、降低成本</p>
+    </div>
+    <div class="card">
+      <h3>金融機構</h3>
+      <p>提升 Robo-Advisor 信任度</p>
+    </div>
+    <div class="card">
+      <h3>技術</h3>
+      <p>模組化可擴展</p>
+    </div>
+  </div>
+</section>
+
+<!-- Vision -->
+<section>
+  <h2>🚀 未來願景</h2>
+  <p>打造下一代 Robo-Advisor 核心引擎</p>
+</section>
+
+<footer>
+  <p>© 2026 Smart-E Robo Team</p>
+</footer>
+
+</body>
+</html>
