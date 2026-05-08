@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart-E Robo | 專業量化投資守門員</title>
+    <title>Smart-E Robo | 專業 ETF 智能理財守門員</title>
+    <!-- 瀏覽器分頁小圖標 (Favicon) -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" type="image/x-icon">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #ffffff;
-            --accent-green: #10b981;
+            --bg-color: #0f172a;       /* 深藍色背景 */
+            --card-bg: #ffffff;        /* 投影片白色卡片 */
+            --accent-green: #10b981;   /* 點綴螢光綠 */
             --text-main: #1e293b;
-            --text-light: #64748b;
+            --text-light: #94a3b8;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             display: flex;
             flex-direction: column;
             align-items: center;
+            line-height: 1.6;
         }
 
-        /* 導覽列 */
+        /* 頂部導覽列 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 60px;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
+            height: 70px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px); /* 磨砂玻璃效果 */
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -41,61 +44,81 @@
 
         nav .logo {
             color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        /* 容器佈局 */
+        /* 內容容器 */
         .container {
-            max-width: 1000px;
-            width: 90%;
-            margin-top: 80px;
+            max-width: 1100px;
+            width: 92%;
+            margin-top: 110px; /* 留出導覽列空間 */
             margin-bottom: 100px;
         }
 
-        /* 投影片卡片樣式 */
+        /* 投影片卡片設計 */
         .slide-card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .slide-card:hover {
-            transform: translateY(-5px);
+            transform: scale(1.02); /* 懸浮時稍微放大 */
+            box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
         }
 
         .slide-card img {
             width: 100%;
             display: block;
             height: auto;
+            border: none;
         }
 
-        /* 底部資訊 */
+        /* 底部資訊欄 */
         footer {
             width: 100%;
-            padding: 50px 0;
+            padding: 60px 0;
             background: #070b14;
             color: white;
             text-align: center;
-            font-size: 0.9rem;
         }
 
-        footer p {
+        footer .team-info {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        footer .slogan {
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        footer .copyright {
             color: var(--text-light);
-            margin-top: 10px;
+            font-size: 0.8rem;
         }
 
-        /* 響應式調整 */
+        /* 響應式：手機版微調 */
         @media (max-width: 768px) {
             .container {
-                width: 95%;
+                width: 96%;
+                margin-top: 90px;
             }
             .slide-card {
-                margin-bottom: 30px;
+                margin-bottom: 40px;
+                border-radius: 12px;
+            }
+            nav .logo {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -103,61 +126,28 @@
 <body>
 
     <nav>
-        <div class="logo">Smart-E Robo Presentation</div>
+        <div class="logo">Smart-E Robo Pitch</div>
     </nav>
 
     <div class="container">
         
-        <!-- Slide 1: Hero -->
-        <div class="slide-card">
-            <img src="slide1.png" alt="Smart-E Robo Title Page">
-        </div>
-
-        <!-- Slide 2: Pain Points -->
-        <div class="slide-card">
-            <img src="slide2.png" alt="被忽視的隱形成本與風險">
-        </div>
-
-        <!-- Slide 3: Math Solution -->
-        <div class="slide-card">
-            <img src="slide3.png" alt="從數學根源阻絕劣質標的">
-        </div>
-
-        <!-- Slide 4: Scanner UI -->
-        <div class="slide-card">
-            <img src="slide4.png" alt="Smart-E 診斷掃描器">
-        </div>
-
-        <!-- Slide 5: Optimization UI -->
-        <div class="slide-card">
-            <img src="slide5.png" alt="最佳化權重配置">
-        </div>
-
-        <!-- Slide 6: Value Proposition -->
-        <div class="slide-card">
-            <img src="slide6.png" alt="Smart-E Robo 的價值">
-        </div>
-
-        <!-- Slide 7: Pricing -->
-        <div class="slide-card">
-            <img src="slide7.png" alt="付費方案">
-        </div>
-
-        <!-- Slide 8: Team -->
-        <div class="slide-card">
-            <img src="slide8.png" alt="NTHU 頂尖量化團隊">
-        </div>
-
-        <!-- Slide 9: Closing -->
-        <div class="slide-card">
-            <img src="slide9.png" alt="你專屬的 ETF 守門員">
-        </div>
+        <!-- 使用 Loop 概念，圖片放在 images 資料夾，副檔名改為 .jpg -->
+        <div class="slide-card"><img src="images/slide1.jpg" alt="Smart-E Robo 封面"></div>
+        <div class="slide-card"><img src="images/slide2.jpg" alt="被忽視的隱形成本與風險"></div>
+        <div class="slide-card"><img src="images/slide3.jpg" alt="從數學根源阻絕劣質標的"></div>
+        <div class="slide-card"><img src="images/slide4.jpg" alt="Smart-E 診斷掃描器"></div>
+        <div class="slide-card"><img src="images/slide5.jpg" alt="最佳化權重配置"></div>
+        <div class="slide-card"><img src="images/slide6.jpg" alt="Smart-E Robo 的價值"></div>
+        <div class="slide-card"><img src="images/slide7.jpg" alt="付費方案"></div>
+        <div class="slide-card"><img src="images/slide8.jpg" alt="NTHU 頂尖量化團隊"></div>
+        <div class="slide-card"><img src="images/slide9.jpg" alt="你專屬的 ETF 守門員"></div>
 
     </div>
 
     <footer>
-        <div>© 2024 Smart-E Robo Team | NTHU QF</div>
-        <p>Professional Logic, Simple Action.</p>
+        <span class="slogan">Professional Logic, Simple Action.</span>
+        <div class="team-info">清大計財所量化團隊 | Smart-E Robo</div>
+        <div class="copyright">© 2024 NTHU QF Project. All Rights Reserved.</div>
     </footer>
 
 </body>
