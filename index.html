@@ -18,47 +18,47 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
         
-        section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
+        /* 統一區塊間距 */
+        section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; }
         .center { text-align: center; }
-        h2 { font-size: 2.2rem; margin-bottom: 30px; letter-spacing: 1px; }
 
-        /* --- Page 1: Hero --- */
-        .hero { height: 100vh; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 10px; }
-        .hero .subtitle { font-size: 1.5rem; color: var(--text-dim); margin-bottom: 40px; }
-        .hero .tagline { font-size: 1.1rem; padding: 15px 30px; border: 2px solid var(--accent); color: var(--accent); border-radius: 50px; display: inline-block; }
+        /* 圖片容器通用樣式 */
+        .img-slide-wrap {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+        .img-slide-wrap img { width: 100%; display: block; height: auto; }
+        .img-slide-wrap:hover { transform: translateY(-5px); }
 
-        /* --- Page 2: Iceberg --- */
-        .iceberg-wrap { position: relative; height: 450px; margin-top: 50px; }
-        .ice-top { width: 0; height: 0; border-left: 100px solid transparent; border-right: 100px solid transparent; border-bottom: 150px solid #cbd5e1; margin: 0 auto; position: relative; z-index: 2; }
-        .water-line { width: 100%; height: 3px; background: #0ea5e9; position: absolute; top: 150px; z-index: 3; box-shadow: 0 0 15px #0ea5e9; }
-        .ice-bottom { width: 0; height: 0; border-left: 150px solid transparent; border-right: 150px solid transparent; border-top: 220px solid #2563eb; margin: 0 auto; opacity: 0.4; }
-        .ice-label { position: absolute; background: rgba(0,0,0,0.8); padding: 12px; border-radius: 8px; font-size: 0.9rem; border-left: 3px solid var(--accent); width: 220px; }
+        /* --- Page 1: Hero (Image) --- */
+        .hero-section { min-height: 100vh; padding-top: 40px; }
 
-        /* --- Page 3: Concept --- */
-        .concept-box { background: var(--card); padding: 50px; border-radius: 30px; border: 1px solid #334155; }
+        /* --- Page 3: Concept (Keep HTML for Tech feel) --- */
+        .concept-box { background: var(--card); padding: 50px; border-radius: 30px; border: 1px solid #334155; margin: 40px 0; }
 
         /* --- Page 4 & 5: UI Mockups --- */
-        .phone-container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .phone-container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
         .phone { width: 280px; height: 580px; background: #000; border: 10px solid #334155; border-radius: 40px; padding: 25px; position: relative; box-shadow: 0 40px 60px rgba(0,0,0,0.5); }
         .phone-header { font-size: 0.7rem; color: var(--text-dim); text-align: center; margin-bottom: 20px; text-transform: uppercase; }
-        .metric { margin-bottom: 15px; font-size: 0.8rem; }
+        .metric { margin-bottom: 15px; font-size: 0.8rem; text-align: left;}
         .bar { height: 8px; background: #334155; border-radius: 4px; margin-top: 5px; overflow: hidden; }
         .bar-fill { height: 100%; background: var(--accent); }
         .rejection-card { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); border-radius: 10px; padding: 10px; font-size: 0.75rem; margin-top: 20px; color: #fca5a5; text-align: left; }
-        
         .donut-chart { width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(var(--accent) 0% 40%, #3b82f6 40% 75%, #6366f1 75% 100%); margin: 20px auto; position: relative; }
         .donut-chart::after { content: 'MVO'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90px; height: 90px; background: #000; border-radius: 50%; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; color: var(--accent); }
 
         /* --- Page 6: Value --- */
-        .value-text { font-size: clamp(1.1rem, 4vw, 1.5rem); color: var(--text-dim); line-height: 2.2; }
+        .value-text { font-size: clamp(1.1rem, 4vw, 1.5rem); color: var(--text-dim); line-height: 2.2; margin: 40px 0;}
         .value-highlight { color: white; border-bottom: 3px solid var(--accent); font-weight: bold; }
 
         /* --- Page 7: Pricing --- */
-        .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;}
         .price-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid #334155; transition: transform 0.3s; }
         .price-card.premium { border-color: var(--accent); box-shadow: 0 0 30px rgba(16, 185, 129, 0.1); }
-        .price-card:hover { transform: translateY(-5px); }
         .price-card ul { list-style: none; margin-top: 25px; text-align: left; font-size: 0.95rem; }
         .price-card ul li { margin-bottom: 10px; }
         .price-card ul li::before { content: '✓ '; color: var(--accent); font-weight: bold; }
@@ -69,154 +69,141 @@
         .avatar { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); margin-bottom: 15px; padding: 4px; }
         .member-card p { font-size: 0.85rem; color: var(--text-dim); margin-top: 5px; line-height: 1.4; }
 
-        /* --- Page 9: Closing Image --- */
-        .closing-section { padding: 60px 0; max-width: 1100px; }
-        .closing-img-wrap { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.6); }
-        .closing-img-wrap img { width: 100%; display: block; height: auto; }
+        footer { background: #070b14; padding: 60px 20px; text-align: center; color: #334155; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-        footer { background: #070b14; padding: 40px; text-align: center; color: #334155; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
-
-        /* Mobile Adjust */
         @media (max-width: 800px) {
             .team-grid, .price-grid { grid-template-columns: 1fr; gap: 40px; }
-            .ice-label { position: static; width: 100%; margin-bottom: 10px; }
             .phone-container { gap: 50px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Slide 1: Hero -->
-<section class="hero center">
-    <h1>Smart-E Robo</h1>
-    <p class="subtitle">Professional Logic, Simple Action.</p>
-    <div class="tagline">複雜的算計交給大腦，獲利的選擇留給自己</div>
-</section>
+    <!-- Slide 1: Hero (Image) -->
+    <section class="hero-section">
+        <div class="img-slide-wrap">
+            <img src="images/slide1.jpg" alt="Smart-E Robo Title">
+        </div>
+    </section>
 
-<!-- Slide 2: Pain Points (Iceberg) -->
-<section>
-    <h2 class="center">被忽視的隱形成本與風險</h2>
-    <div class="iceberg-wrap">
-        <div class="ice-label" style="top: 20px; left: 8%;">表面可見的手續費與管理費</div>
-        <div class="water-line"></div>
-        <div class="ice-top"></div>
-        <div class="ice-bottom"></div>
-        <div class="ice-label" style="top: 220px; left: 55%;">流動性陷阱：ADV 過低侵蝕績效</div>
-        <div class="ice-label" style="top: 310px; left: 10%;">追蹤誤差風險：非系統性風險增加</div>
-    </div>
-</section>
+    <!-- Slide 2: Iceberg (Image) -->
+    <section>
+        <div class="img-slide-wrap">
+            <img src="images/slide2.jpg" alt="被忽視的隱形成本與風險">
+        </div>
+    </section>
 
-<!-- Slide 3: Concept -->
-<section class="center">
-    <div class="concept-box">
-        <h2 style="font-size: 1.8rem;">從數學根源阻絕劣質標的</h2>
-        <p style="color: var(--text-dim);">透過預篩選機制阻絕劣質標的進入模型，從根本解決機器人理財的配置偏誤。</p>
-        <div style="margin-top: 40px; font-weight: bold; color: var(--accent); cursor: pointer;">進入 Smart-E Robo 實際體驗 →</div>
-    </div>
-</section>
+    <!-- Slide 3: Concept (Keep HTML for Interaction) -->
+    <section class="center">
+        <div class="concept-box">
+            <h2 style="font-size: 1.8rem; color: white;">從數學根源阻絕劣質標的</h2>
+            <p style="color: var(--text-dim); margin: 15px 0;">透過預篩選機制阻絕劣質標的進入模型，從根本解決機器人理財的配置偏誤。</p>
+            <div style="margin-top: 30px; font-weight: bold; color: var(--accent);">進入 Smart-E Robo 實際體驗 →</div>
+        </div>
+    </section>
 
-<!-- Slide 4 & 5: Stages UI -->
-<section>
-    <h2 class="center">自動過濾與配置機制</h2>
-    <div class="phone-container">
-        <!-- Stage 1 Mockup -->
-        <div class="phone">
-            <p class="phone-header">第一階段量化評級</p>
-            <h4 style="margin: 15px 0; font-size: 1.1rem; text-align: center;">診斷掃描器</h4>
-            <div class="metric">流動性 (ADV)<div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
-            <div class="metric">總費用率 (Cost)<div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
-            <div class="metric">年化主動風險<div class="bar"><div class="bar-fill" style="width: 45%;"></div></div></div>
-            <div class="rejection-card">
-                <strong>⚠️ 避雷警示：</strong><br>此標的排名落於後 50%，系統已自動將其剔除。
+    <!-- Slide 4 & 5: Stages UI Mockups -->
+    <section class="center">
+        <h2 style="color: white; margin-bottom: 10px;">自動過濾與配置機制</h2>
+        <div class="phone-container">
+            <!-- Stage 1 Mockup -->
+            <div class="phone">
+                <p class="phone-header">第一階段量化評級</p>
+                <h4 style="margin: 15px 0; font-size: 1.1rem;">診斷掃描器</h4>
+                <div class="metric">流動性 (ADV)<div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
+                <div class="metric">總費用率 (Cost)<div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
+                <div class="metric">年化主動風險<div class="bar"><div class="bar-fill" style="width: 45%;"></div></div></div>
+                <div class="rejection-card">
+                    <strong>⚠️ 避雷警示：</strong><br>此標的排名落於後 50%，系統已自動將其剔除。
+                </div>
+                <p style="font-size: 0.65rem; color: var(--text-dim); margin-top: 20px; line-height: 1.4;">將複雜學理轉化為秒懂的「避雷雷達」。</p>
             </div>
-            <p style="font-size: 0.65rem; color: var(--text-dim); margin-top: 20px; line-height: 1.4;">將複雜學理轉化為秒懂的「避雷雷達」。</p>
-        </div>
-        <!-- Stage 2 Mockup -->
-        <div class="phone">
-            <p class="phone-header">第二階段權重配置</p>
-            <div class="donut-chart"></div>
-            <div style="font-size: 0.75rem; text-align: left; margin-top: 25px; padding-left: 20px;">
-                ● 優質A標的：40%<br>
-                ● 優質B標的：35%<br>
-                ● 優質C標的：25%
+            <!-- Stage 2 Mockup -->
+            <div class="phone">
+                <p class="phone-header">第二階段權重配置</p>
+                <div class="donut-chart"></div>
+                <div style="font-size: 0.75rem; text-align: left; margin-top: 25px; padding-left: 20px;">
+                    ● 優質A標的：40%<br>
+                    ● 優質B標的：35%<br>
+                    ● 優質C標的：25%
+                </div>
+                <div style="background: var(--accent); color: white; padding: 12px; border-radius: 12px; font-size: 0.9rem; font-weight: bold; margin-top: 35px;">一鍵智能調倉</div>
+                <p style="font-size: 0.65rem; color: var(--text-dim); margin-top: 20px; line-height: 1.4;">數學根源解決配置偏誤，終端只需一個按鍵。</p>
             </div>
-            <div style="background: var(--accent); color: white; padding: 12px; border-radius: 12px; text-align: center; margin-top: 35px; font-weight: bold; font-size: 0.9rem;">一鍵智能調倉</div>
-            <p style="font-size: 0.65rem; color: var(--text-dim); margin-top: 20px; line-height: 1.4;">數學根源解決配置偏誤，終端只需一個按鍵。</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Slide 6: Philosophy -->
-<section class="center">
-    <div class="value-text">
-        不同的知識背景，卻有相同的需求。<br><br>
-        在 AI 科技及越趨龐大的金融體系中，<br>
-        能快速指出方向，並告知應採取什麼行動——<br><br>
-        這就是 <span class="value-highlight">Smart-E Robo 的價值</span>。
-    </div>
-</section>
+    <!-- Slide 6: Philosophy (Text) -->
+    <section class="center">
+        <div class="value-text">
+            不同的知識背景，卻有相同的需求。<br><br>
+            在 AI 科技及越趨龐大的金融體系中，<br>
+            能快速指出方向，並告知應採取什麼行動——<br><br>
+            這就是 <span class="value-highlight">Smart-E Robo 的價值</span>。
+        </div>
+    </section>
 
-<!-- Slide 7: Pricing -->
-<section class="center">
-    <h2 style="margin-bottom: 40px;">訂閱方案</h2>
-    <div class="price-grid">
-        <div class="price-card">
-            <h3 style="color: var(--text-dim); font-size: 1.5rem;">免費版</h3>
-            <div style="font-size: 2.2rem; margin: 15px 0; font-weight: 700;">$0 <small style="font-size: 1rem; color: #64748b;">/ 月</small></div>
-            <ul>
-                <li>量化評級篩選結果</li>
-                <li>一天限次數診斷使用</li>
-                <li>基礎投資組合建議</li>
-                <li>簡易投資數據報表</li>
-            </ul>
+    <!-- Slide 7: Pricing -->
+    <section class="center">
+        <h2 style="color: white;">訂閱方案</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3 style="color: var(--text-dim); font-size: 1.5rem;">免費版</h3>
+                <div style="font-size: 2.2rem; margin: 15px 0; font-weight: 700;">$0 <small style="font-size: 1rem; color: #64748b;">/ 月</small></div>
+                <ul>
+                    <li>量化評級篩選結果</li>
+                    <li>一天限次數診斷使用</li>
+                    <li>基礎投資組合建議</li>
+                    <li>簡易投資數據報表</li>
+                </ul>
+            </div>
+            <div class="price-card premium">
+                <h3 style="color: var(--accent); font-size: 1.5rem;">付費版</h3>
+                <div style="font-size: 2.2rem; margin: 15px 0; font-weight: 700;">$200 <small style="font-size: 1rem; color: #64748b;">/ 月</small></div>
+                <ul>
+                    <li>完整 MPT 權重最佳化建議</li>
+                    <li>不限制標的掃描次數</li>
+                    <li>市場劇烈波動主動通知</li>
+                    <li>前 30 天免費試用體驗</li>
+                </ul>
+            </div>
         </div>
-        <div class="price-card premium">
-            <h3 style="color: var(--accent); font-size: 1.5rem;">付費版</h3>
-            <div style="font-size: 2.2rem; margin: 15px 0; font-weight: 700;">$200 <small style="font-size: 1rem; color: #64748b;">/ 月</small></div>
-            <ul>
-                <li>完整 MPT 權重最佳化建議</li>
-                <li>不限制標的掃描次數</li>
-                <li>市場劇烈波動主動通知</li>
-                <li>前 30 天免費試用體驗</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Slide 8: Team -->
-<section class="center">
-    <h2 style="margin-bottom: 10px;">NTHU 頂尖量化團隊</h2>
-    <p style="color: var(--text-dim); margin-bottom: 50px;">清大計財所專業背景，打造專屬 ETF 守門員</p>
-    <div class="team-grid">
-        <div class="member-card">
-            <img src="images/images13.jpg" class="avatar" alt="謝尚均">
-            <h4>謝尚均 CEO</h4>
-            <p>清大計財所碩士 (在學)<br>負責整體整合與發想</p>
+    <!-- Slide 8: Team -->
+    <section class="center">
+        <h2 style="color: white; margin-bottom: 10px;">NTHU 頂尖量化團隊</h2>
+        <p style="color: var(--text-dim); margin-bottom: 40px;">清大計財所專業背景，打造專屬 ETF 守門員</p>
+        <div class="team-grid">
+            <div class="member-card">
+                <img src="images/images13.jpg" class="avatar" alt="謝尚均">
+                <h4>謝尚均 CEO</h4>
+                <p>清大計財所碩士 (在學)<br>負責整體整合與發想</p>
+            </div>
+            <div class="member-card">
+                <img src="images/images14.jpg" class="avatar" alt="郭俊霖">
+                <h4>郭俊霖 CFO</h4>
+                <p>清大計財所碩士 (在學)<br>負責財務策略與永續成長</p>
+            </div>
+            <div class="member-card">
+                <img src="images/images15.jpg" class="avatar" alt="盧新瑋">
+                <h4>盧新瑋 CTO</h4>
+                <p>清大計財所碩士 (在學)<br>負責後端開發與架構優化</p>
+            </div>
         </div>
-        <div class="member-card">
-            <img src="images/images14.jpg" class="avatar" alt="郭俊霖">
-            <h4>郭俊霖 CFO</h4>
-            <p>清大計財所碩士 (在學)<br>負責財務策略與永續成長</p>
-        </div>
-        <div class="member-card">
-            <img src="images/images15.jpg" class="avatar" alt="盧新瑋">
-            <h4>盧新瑋 CTO</h4>
-            <p>清大計財所碩士 (在學)<br>負責後端開發與架構優化</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Slide 9: Closing (Image Based) -->
-<section class="closing-section center">
-    <div class="closing-img-wrap">
-        <img src="images/slide9.jpg" alt="Smart-E Robo Closing">
-    </div>
-</section>
+    <!-- Slide 9: Closing (Image) -->
+    <section>
+        <div class="img-slide-wrap">
+            <img src="images/slide9.jpg" alt="Smart-E Robo Closing">
+        </div>
+    </section>
 
-<footer>
-    <div>© 2026 Smart-E Robo Project | NTHU Quantitative Finance</div>
-    <div style="margin-top: 10px; opacity: 0.5;">Professional Logic, Simple Action.</div>
-</footer>
+    <footer>
+        <div style="color: var(--accent); font-weight: bold; margin-bottom: 10px;">Smart-E Robo | Professional Logic, Simple Action.</div>
+        <div>© 2026 NTHU Quantitative Finance Project</div>
+    </footer>
 
 </body>
 </html>
